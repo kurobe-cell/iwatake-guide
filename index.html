@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakuba Iwatake Photo Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Hakuba Iwatake<br>Mountain Harbor</h1>
+        <h2 class="sub-title">Photo Service Guide / 多言語案内</h2>
+        <p>Select your language / 言語を選んでください</p>
+        
+        <div class="flags">
+            <img src="assets/images/jp.png" onclick="selectLang('ja')" alt="Japanese">
+            <img src="assets/images/en.png" onclick="selectLang('en')" alt="English">
+            <img src="assets/images/zh.png" onclick="selectLang('zh')" alt="Chinese">
+            <img src="assets/images/tw.png" onclick="selectLang('tw')" alt="Taiwanese">
+            <img src="assets/images/ko.png" onclick="selectLang('ko')" alt="Korean">
+            <img src="assets/images/th.png" onclick="selectLang('th')" alt="Thai">
+            <img src="assets/images/vi.png" onclick="selectLang('vi')" alt="Vietnamese">
+            <img src="assets/images/id.png" onclick="selectLang('id')" alt="Indonesian">
+            <img src="assets/images/ms.png" onclick="selectLang('ms')" alt="Malaysian">
+        </div>
+
+        <hr>
+
+        <div id="guide-area" style="display:none;">
+            <h2 id="guide-title"></h2>
+            
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <p id="guide-text"></p>
+            
+            <div class="controls">
+                <button id="play-btn">🔊 Listen (再生)</button>
+                <button id="stop-btn">Stop (停止)</button>
+            </div>
+            
+            <audio id="audio-player"></audio>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
