@@ -23,8 +23,10 @@ h1 { color: #2c3e50; font-size: 1.8rem; margin-bottom: 5px; }
 .flags img:hover { transform: scale(1.1); }
 
 #guide-text {
-    font-size: 0.85rem;
-    line-height: 1.8;
+    font-weight: 400;     /* 標準の太さ */
+    line-height: 1.9;     /* 行間を少し広げて、ゆったりと読ませる */
+    letter-spacing: 0.03em; /* 文字の間隔をわずかに広げる（高級感が出ます） */
+    font-size: 0.9rem;
     white-space: pre-wrap;
     text-align: left;
     color: #333;
