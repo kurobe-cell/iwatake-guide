@@ -18,6 +18,15 @@ body {
 h1 { color: #2c3e50; font-size: 1.5rem; margin-bottom: 5px; }
 .sub-title { color: #7f8c8d; font-size: 1rem; margin-bottom: 20px; }
 
+/* 言語選択メッセージの調整 */
+.select-text {
+    font-size: 1.1rem;      /* 文字を少し大きくして見やすく */
+    line-height: 1.6;       /* 2行になった時の行間を調整 */
+    margin-bottom: 25px;    /* 下の国旗（3列）との間隔をしっかり空ける */
+    color: #2c3e50;         /* 文字色をタイトルに寄せて統一感を出す */
+    font-weight: 500;       /* 少しだけ太くして読みやすく */
+}
+
 /* 🚩 国旗を3列にする設定 */
 .flags {
     display: grid;
