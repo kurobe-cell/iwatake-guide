@@ -1,36 +1,50 @@
 body {
-    /* Noto Sans JP を最優先にし、次に各言語の標準フォントを指定します */
-    font-family: 'Noto Sans JP', "PingFang SC", "Microsoft YaHei", "Hiragino Sans", "Meiryo", sans-serif;
+    font-family: 'Noto Sans JP', "PingFang SC", "Microsoft YaHei", sans-serif;
     text-align: center;
     background-color: #f4f7f6;
     margin: 0;
-    padding: 20px;
+    padding: 15px; /* スマホの端に少し余裕を持たせる */
 }
 
 #app {
     max-width: 500px;
     margin: 0 auto;
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+/* タイトル周り */
+h1 { color: #2c3e50; font-size: 1.5rem; margin-bottom: 5px; }
+.sub-title { color: #7f8c8d; font-size: 1rem; margin-bottom: 20px; }
 
-h1 { color: #2c3e50; font-size: 1.8rem; margin-bottom: 5px; }
-.sub-title { color: #7f8c8d; font-size: 1.1rem; margin-bottom: 20px; }
+/* 🚩 国旗を3列にする設定 */
+.flags {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列に均等分割 */
+    gap: 10px; /* 国旗同士の間隔 */
+    margin-bottom: 20px;
+}
 
-.flags img { width: 70px; cursor: pointer; margin: 8px; border-radius: 5px; transition: 0.2s; border: 1px solid #eee; }
-.flags img:hover { transform: scale(1.1); }
+.flags img {
+    width: 100%; /* 枠いっぱいに広げる */
+    max-width: 90px; /* 大きすぎないように制限 */
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    justify-self: center; /* 中央に寄せる */
+}
 
+/* 📱 説明文の改行バランス調整 */
 #guide-text {
-    font-weight: 400;     /* 標準の太さ */
-    line-height: 1.9;     /* 行間を少し広げて、ゆったりと読ませる */
-    letter-spacing: 0.03em; /* 文字の間隔をわずかに広げる（高級感が出ます） */
     font-size: 0.9rem;
+    line-height: 1.7; /* 行間を広げて読みやすく */
     white-space: pre-wrap;
     text-align: left;
     color: #333;
-    padding: 10px;
+    padding: 15px 5px; /* 上下の余白 */
+    word-break: break-word; /* 単語の途中で変に切れないようにする */
 }
 
 /* プログレスバー */
@@ -41,17 +55,25 @@ h1 { color: #2c3e50; font-size: 1.8rem; margin-bottom: 5px; }
     border-radius: 4px;
     margin: 15px 0;
 }
-#progress-bar {
-    width: 0%;
-    height: 100%;
-    background-color: #2ecc71; /* 白馬の自然をイメージした緑 */
-    border-radius: 4px;
-    transition: width 0.1s linear;
+
+/* 🔘 ボタンの配置と上下の余白 */
+.controls {
+    display: flex;
+    flex-direction: column; /* スマホでは上下に並べるのがおすすめ */
+    gap: 15px; /* ボタン同士の上下の間隔を広げる */
+    margin-top: 10px;
 }
 
-/* ボタン */
 #play-btn, #stop-btn {
-    color: white; border: none; padding: 12px 24px; border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 1rem;
+    width: 100%; /* スマホで押しやすいように横幅いっぱいに */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
+
 #play-btn { background-color: #2ecc71; }
-#stop-btn { background-color: #95a5a6; margin-left: 10px; }
+#stop-btn { background-color: #95a5a6; }
